@@ -4,7 +4,7 @@
 #include <cstdlib>
 #include <ctime>
 using namespace std;
-hehe
+
 void countdown(int hours) {
     int seconds = hours * 3600;
 
