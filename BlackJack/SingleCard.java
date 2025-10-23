@@ -1,0 +1,30 @@
+package BlackJack;
+
+public class SingleCard {
+    private String rank;
+    private String suit;
+    private int value;
+
+    
+    public SingleCard(String rank, String suit, int value) {
+        this.rank = rank;
+        this.suit = suit;
+        this.value = value;
+    }
+    public String getRank() {
+        return rank;
+    }
+    public String getSuit() {
+        return suit;
+    }
+    public int getValue() {
+        return value;
+    }
+
+    @Override
+    public String toString() {
+        return rank + " of " + suit + " (Value: " + value + ")";
+    }
+
+}
+

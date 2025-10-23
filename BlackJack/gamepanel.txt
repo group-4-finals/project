@@ -1,0 +1,70 @@
+package BlackJack;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class gamePanel extends JPanel implements ActionListener{
+    public  gamePanel(){
+
+        JButton Hit = new JButton();
+        JButton Stay = new JButton();
+        
+
+        JLabel player = new JLabel("Player");
+        JLabel dealer = new JLabel("Dealer");
+
+        setLayout(null);
+        player.setBounds(350, 570, 70, 40);
+        player.setFont(new Font("Times New Roman", Font.BOLD, 25));
+        player.setForeground(Color.WHITE);
+
+        dealer.setBounds(350, 15, 70, 40);
+        dealer.setFont(new Font("Times New Roman", Font.BOLD, 25));
+        dealer.setForeground(Color.WHITE);
+
+        Hit.setText("Hit");
+        Hit.setFont(new Font("Times New Roman", Font.BOLD, 10)); 
+        Hit.setBounds(390, 540, 80, 30);
+        Hit.setEnabled(true);
+        
+
+        Stay.setText("Stay");
+        Stay.setFont(new Font("Times New Roman", Font.BOLD, 10));
+        Stay.setBounds(300, 540, 80, 30);
+        Stay.setEnabled(true);
+
+        
+        this.add(player);
+        this.add(dealer);
+        this.add(Hit);
+        this.add(Stay);
+        
+
+        
+        }
+        public void actionPerformed(ActionEvent e){
+        }
+         
+
+public JButton stay() {
+    return stay(); 
+}
+
+public JButton hit(){
+        return hit();
+      }
+        
+
+
+        
+     
+        
+    }
+    
+
