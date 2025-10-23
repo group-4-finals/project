@@ -1,0 +1,149 @@
+package BlackJack;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JCheckBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class questionnaire extends JPanel implements ActionListener{
+    public questionnaire(){
+    JLabel question_Label = new JLabel();
+    JCheckBox check = new JCheckBox();
+    
+    question_Label.setText(("<html><div style='width:400px;'>"
+    + "WARNING: GAMBLING IS A SIN AND IS A FORM OF ADULT ENTERTAINMENT. "
+    + "BY PARTICIPATING IN THIS GAME YOU ACCEPT THE CONSEQUENCES THAT THIS GAME OFFERS."
+    + "</div></html>"));
+    question_Label.setVerticalAlignment(JLabel.TOP); //this align the label along the y axis
+    question_Label.setHorizontalAlignment(JLabel.CENTER);//this align the label along the x axis
+    question_Label.setForeground(Color.WHITE); // font color
+    question_Label.setFont(new Font("Times New Roman",Font.BOLD,12)); //font,style and size
+    question_Label.setBounds(0, 0, 700, 30);
+    question_Label.setOpaque(true); // This makes the background visible
+    question_Label.setBackground(Color.RED); // Or any color you like
+
+    check.setText("I AM BATMAN");
+    check.setBounds(250, 50, 200, 30);
+
+
+    setLayout(null);
+    this.add(question_Label);
+    this.add(check);
+
+    }
+    @Override
+    public void actionPerformed(ActionEvent e){
+
+    }
+}
+
+August 21 (12:28pm)
+
+package BlackJack;
+import java.awt.CardLayout;
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+
+public class blackjack {
+    public static void main(String[] args) {
+     
+    
+    JFrame frame = new JFrame();
+    CardLayout  cardlayout = new CardLayout();
+    JPanel mainPanel =  new JPanel(cardlayout);
+    JPanel container = new JPanel(new CardLayout());
+    container.setBounds(150, 100, 700, 500); // manual placement of the whole card container
+
+
+    questionnaire questionnaire_panel = new questionnaire();
+    questionnaire panel = new questionnaire();
+
+    
+    JButton submitBtn = questionnaire_panel.getSubmitButton();
+    JPanel gamePanel = new JPanel();
+
+
+    mainPanel.add(questionnaire_panel, "questionnaire");
+        mainPanel.add(gamePanel, "game");
+
+        // Add the CardLayout container to the frame
+        frame.setContentPane(mainPanel);
+
+
+    ImageIcon image = new ImageIcon("C:\\Users\\Anton\\OneDrive\\Desktop\\Java\\scratch\\src\\BlackJack\\blackjack.jpg");
+    frame.setTitle("BLACKJACK");
+    frame.setSize(1000,750);
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    frame.setVisible(true);
+    frame.setResizable(false);
+    frame.getContentPane().setBackground(new Color(47, 79, 79));
+    frame.setIconImage(image.getImage());
+    frame.setLayout(null);
+    frame.add(questionnaire_panel);
+  
+
+    mainPanel.add(questionnaire_panel);
+    container.add(panel, "questionnaire");
+    container.add(gamePanel, "game");
+
+
+
+
+    questionnaire_panel.setBounds(150, 100, 700, 500);
+
+    submitBtn.addActionListener(e -> {
+            cardlayout.show(mainPanel, "game");
+        });
+    }
+}
+
+----------------------------------------------------------------
+as of 9:56am sept 19
+deckOfCards
+
+package BlackJack;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Random;
+
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+public class deckOfCards {
+    public static void main(String[] args) {
+    new deckOfCards();
+}
+    
+    public deckOfCards(){
+        ImageIcon icon = new ImageIcon();
+
+        ImageIcon imageIcon = new ImageIcon("path/to/your/image.png");
+        JLabel two_of_Diamonds = new JLabel(imageIcon);
+        Random random = new Random();
+        String[] cards_face_values = {"2","3","4","5","6","7","8","9","10","Jack","Queen","King","Ace"};
+        String[] card_suites = {"Spades", "Clubs", "Hearts", "Diamonds"};
+        String selectedValue = cards_face_values[random.nextInt(cards_face_values.length)];
+        String selectedSuite = card_suites[random.nextInt(card_suites.length)];
+
+       ArrayList<String> deck =  new ArrayList<>();
+       Collections.addAll(deck,card_suites);
+       Collections.addAll(deck,cards_face_values);
+
+       for(String cards : deck){
+        System.out.print(cards + " ");
+       }
+
+
+    
+
+
+    }
+}

@@ -1,0 +1,24 @@
+package BlackJack;
+
+import java.util.Random;
+
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+public class single_card {
+    
+    public static void main(String[] args) {
+        
+        ImageIcon icon = new ImageIcon();
+
+        ImageIcon imageIcon = new ImageIcon("path/to/your/image.png");
+        JLabel two_of_Diamonds = new JLabel(imageIcon);
+        Random random = new Random();
+        String[] cards_face_values = {"2","3","4","5","6","7","8","9","10","Jack","Queen","King","Ace"};
+        String[] card_suites = {"Spades", "Clubs", "Hearts", "Diamonds"};
+        String selectedValue = cards_face_values[random.nextInt(cards_face_values.length)];
+        String selectedSuite = card_suites[random.nextInt(card_suites.length)];
+
+    }
+    
+
+    }

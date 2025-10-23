@@ -1,0 +1,25 @@
+package BlackJack;
+
+import java.util.ArrayList;
+import java.util.Collections;
+public class Deck_of_cards {
+    public static void main(String[] args) {
+
+        String[] cards_face_values = {"2","3","4","5","6","7","8","9","10","Jack","Queen","King","Ace"};
+        String[] card_suites = {"Spades", "Clubs", "Hearts", "Diamonds"};
+        ArrayList<String> deck_of_cards = new ArrayList<>();
+        String card;
+
+        for (int i = 0; i < card_suites.length; i++) {
+            // Inner loop for ranks
+            for (int j = 0; j < cards_face_values.length; j++) {
+            card = cards_face_values[j] + " of " + card_suites[i];
+            deck_of_cards.add(card);
+            deck_of_cards.add(card);
+            }
+        }
+        Collections.shuffle(deck_of_cards);
+        System.out.println(deck_of_cards);
+    
+    }
+}

@@ -1,0 +1,78 @@
+package BlackJack;
+import java.awt.Color;
+
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.border.Border;
+
+public class blackjack {
+    public static void main(String[] args) {
+     
+    
+    JFrame frame = new JFrame();
+    Border border = BorderFactory.createLineBorder(new Color(255, 215, 0), 4);
+    questionnaire panel = new questionnaire();
+
+    ImageIcon image = new ImageIcon("C:\\Users\\Anton\\OneDrive\\Desktop\\Java\\scratch\\src\\BlackJack\\blackjack.jpg");
+    frame.setTitle("BLACKJACK");
+    frame.setSize(1000,750);
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    frame.setVisible(true);
+    frame.setResizable(false);
+    frame.getContentPane().setBackground(new Color(47, 79, 79));
+    frame.setIconImage(image.getImage());
+    frame.setLayout(null);
+    frame.add(panel);
+
+
+    panel.setBounds(150, 100, 700, 500);
+    panel.setBorder(border);
+
+    
+    
+    }
+}
+
+august 22 11:50am
+
+package BlackJack;
+import java.awt.CardLayout; 
+import java.awt.Color;
+import javax.swing.ImageIcon; 
+import javax.swing.JButton; 
+import javax.swing.JFrame; 
+import javax.swing.JPanel;
+
+public class blackjack { public static void main(String[] args) { 
+    JFrame frame = new JFrame(); 
+    frame.setTitle("BLACKJACK"); 
+    frame.setSize(1000, 750); 
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+    frame.setResizable(false);
+     frame.setLayout(null);
+    frame.getContentPane().setBackground(new Color(47, 79, 79)); 
+    frame.setIconImage(new ImageIcon("C:\\Users\\Anton\\OneDrive\\Desktop\\Java\\scratch\\src\\BlackJack\\blackjack.jpg").getImage());
+
+    JPanel container = new JPanel(new CardLayout());
+    container.setBounds(150, 100, 700, 500);
+    frame.add(container);
+
+    questionnaire questionnaire_panel = new questionnaire();
+    JPanel gamePanel = new JPanel();
+    gamePanel.setBackground(Color.DARK_GRAY);
+
+    container.add(questionnaire_panel, "questionnaire");
+    container.add(gamePanel, "game");
+
+    JButton submitBtn = questionnaire_panel.getSubmitButton();
+    submitBtn.addActionListener(e -> {
+        CardLayout cl = (CardLayout) container.getLayout();
+        cl.show(container, "game");
+    });
+
+    frame.setVisible(true);
+}
+    
+    }
+
